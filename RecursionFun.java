@@ -11,7 +11,7 @@
  * 
  * We will not be using code coverage for points.
  *
- * @author Rick Mercer and Your Name
+ * @author Rick Mercer and Ulises Gomez
  */
 public class RecursionFun {
 
@@ -41,7 +41,7 @@ public class RecursionFun {
 		if (num.length() <= 3) {
 			return num;
 		}
-		return intWithCommas(n/1000) + "," + num.substring(num.length()-3);	
+		return intWithCommas(n / 1000) + "," + num.substring(num.length() - 3);
 	}
 
 	// Write recursive method reverseArray that reverses the array elements in a
@@ -64,13 +64,13 @@ public class RecursionFun {
 	}
 
 	private void reverseArray(int[] x, int index, int len) {
-		int argIndex = (len-1)-index;
+		int argIndex = (len - 1) - index;
 		if (index < argIndex) {
 			int temp = x[index];
 			x[index] = x[argIndex];
 			x[argIndex] = temp;
-			
-			reverseArray(x, index+1, len);
+
+			reverseArray(x, index + 1, len);
 		}
 	}
 
@@ -85,11 +85,11 @@ public class RecursionFun {
 	private int arrayRange(int[] a, int min, int max, int index, int len) {
 		if (index < len) {
 			if (a[index] > max) {
-				return arrayRange(a, min, a[index], index+1, len);
+				return arrayRange(a, min, a[index], index + 1, len);
 			} else if (a[index] < min) {
-				return arrayRange(a, a[index], max, index+1, len);
+				return arrayRange(a, a[index], max, index + 1, len);
 			}
-			return arrayRange(a, min, max, index+1, len);
+			return arrayRange(a, min, max, index + 1, len);
 		}
 		return max - min;
 	}
@@ -102,13 +102,13 @@ public class RecursionFun {
 		}
 		return isSorted(nums, 1, nums.length);
 	}
-	
+
 	public boolean isSorted(int[] nums, int index, int len) {
 		if (index < len) {
-			if (nums[index-1] > nums[index]) {
+			if (nums[index - 1] > nums[index]) {
 				return false;
 			}
-			return isSorted(nums, index+1, len);
+			return isSorted(nums, index + 1, len);
 		}
 		return true;
 	}
@@ -124,7 +124,7 @@ public class RecursionFun {
 			if (strs[index].equals(search)) {
 				return true;
 			}
-			return found(search, index+1, len, strs);
+			return found(search, index + 1, len, strs);
 		}
 		return false;
 	}

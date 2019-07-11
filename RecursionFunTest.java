@@ -234,7 +234,7 @@ public class RecursionFunTest {
 		char[][] grid = { { '+', '+', '+', '+' }, { ' ', ' ', ' ', '+' },
 				{ '+', ' ', ' ', '+' }, { '+', ' ', ' ', '+' },
 				{ '+', '+', '+', '+' } };
-		ObstacleCourse top = new ObstacleCourse(2, 2, grid);  
+		ObstacleCourse top = new ObstacleCourse(2, 2, grid);
 		assertEquals(2, top.getStartRow());
 		assertEquals(2, top.getStartColumn());
 		top.findTheExit();

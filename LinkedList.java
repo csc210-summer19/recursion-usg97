@@ -6,7 +6,7 @@
  * 
  * E get(int) void removeAll(E) void duplicateAll(E)
  * 
- * @author Rick Mercer and Your Name
+ * @author Rick Mercer and Ulises Gomez
  */
 public class LinkedList<E extends Comparable<E>> {
 	// extends Comparable<E> means the type must be comparable to avoid CT
@@ -107,7 +107,7 @@ public class LinkedList<E extends Comparable<E>> {
 
 	private E get(Node ref, int startIndex, int stopIndex) {
 		if (startIndex < stopIndex) {
-			return get(ref.next, startIndex+1, stopIndex);
+			return get(ref.next, startIndex + 1, stopIndex);
 		}
 		return ref.data;
 	}
@@ -143,7 +143,7 @@ public class LinkedList<E extends Comparable<E>> {
 		// This public method requires a call to a private helper method
 		// with first as an argument. It must be recursive, no loop allowed.
 		duplicateAll(el, first);
-		
+
 	}
 
 	private void duplicateAll(E el, Node ref) {

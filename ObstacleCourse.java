@@ -2,6 +2,8 @@
  * ObstacleCourse: A type that represents an obstacle course from which to
  * escape. This does not find the shorted path. Because of this, we must always
  * assume there is only one exit.
+ * 
+ * @author Ulises Gomez
  */
 public class ObstacleCourse {
 
@@ -76,21 +78,21 @@ public class ObstacleCourse {
 		boolean escaped = false;
 		if (course[row][col] == ' ') {
 			course[row][col] = '.';
-			int rows = course.length-1, cols = course[0].length-1;
+			int rows = course.length - 1, cols = course[0].length - 1;
 			if (row == 0 || row == rows || col == 0 || col == cols) {
 				escaped = true;
 				foundRow = row;
 				foundCol = col;
 			} else {
-				escaped = findExit(row+1, col);
+				escaped = findExit(row + 1, col);
 				if (!escaped) {
-					escaped = findExit(row, col+1);
+					escaped = findExit(row, col + 1);
 				}
 				if (!escaped) {
-					escaped = findExit(row-1, col);
+					escaped = findExit(row - 1, col);
 				}
 				if (!escaped) {
-					escaped = findExit(row, col-1);
+					escaped = findExit(row, col - 1);
 				}
 			}
 			if (escaped) {
